@@ -350,19 +350,19 @@ $email = isset($_SESSION["email"]) ? $_SESSION["email"] : null;
   <a href="home.php">Home</a>
 
   <div class="dropdown">
-    <a href="#">Men</a>
+    <a href="">Men</a>
     <div class="dropdown-content">
       <div class="dropdown-column">
         <h3>Categories</h3>
-        <a href="#">Shirt</a>
-        <a href="#">Polo-Neck</a>
-        <a href="#">T-Shirts</a>
-        <a href="#">Jeans</a>
-        <a href="#">Formal-Pant</a>
-        <a href="#">Casual-Pant</a>
-        <a href="#">Shorts</a>
-        <a href="#">Formal-Shoe</a>
-        <a href="#">Casual-Shoe</a>
+        <a href="category_view.php?gender=men&category=shirt">Shirt</a>
+        <a href="category_view.php?gender=men&category=Polo-Neck">Polo-Neck</a>
+        <a href="category_view.php?gender=men&category=T-Shirts">T-Shirts</a>
+        <a href="category_view.php?gender=men&category=Jeans">Jeans</a>
+        <a href="category_view.php?gender=men&category=Formal-Pant">Formal-Pant</a>
+        <a href="category_view.php?gender=men&category=Casual-Pant">Casual-Pant</a>
+        <a href="category_view.php?gender=men&category=Shorts">Shorts</a>
+        <a href="category_view.php?gender=men&category=Formal-Shoe">Formal-Shoe</a>
+        <a href="category_view.php?gender=men&category=Casual-Shoe">Casual-Shoe</a>
         
       </div>
     </div>
@@ -373,15 +373,15 @@ $email = isset($_SESSION["email"]) ? $_SESSION["email"] : null;
     <div class="dropdown-content">
       <div class="dropdown-column">
          <h3>Categories</h3>
-        <a href="#">Shirt</a>
-        <a href="#">Polo-Neck</a>
-        <a href="#">T-Shirts</a>
-        <a href="#">Jeans</a>
-        <a href="#">Formal-Pant</a>
-        <a href="#">Casual-Pant</a>
-        <a href="#">Shorts</a>
-        <a href="#">Formal-Shoe</a>
-        <a href="#">Casual-Shoe</a>
+        <a href="category_view.php?gender=women&category=shirt">Shirt</a>
+        <a href="category_view.php?gender=women&category=Polo-Neck">Polo-Neck</a>
+        <a href="category_view.php?gender=women&category=T-Shirts">T-Shirts</a>
+        <a href="category_view.php?gender=women&category=Jeans">Jeans</a>
+        <a href="category_view.php?gender=women&category=Formal-Pant">Formal-Pant</a>
+        <a href="category_view.php?gender=women&category=Casual-Pant">Casual-Pant</a>
+        <a href="category_view.php?gender=women&category=Shorts">Shorts</a>
+        <a href="category_view.php?gender=women&category=Formal-Shoe">Formal-Shoe</a>
+        <a href="category_view.php?gender=women&category=Casual-Shoe">Casual-Shoe</a>
       </div>
     </div>
   </div>
