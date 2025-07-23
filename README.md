@@ -1,4 +1,7 @@
-# MoBazaar is a dynamic and user-friendly e-commerce web application built using PHP, MySQL, HTML, CSS, and JavaScript. It provides a seamless online shopping experience with a modern UI inspired by platforms like Amazon and Flipkart, but customized with a unique red, white, and black color scheme that aligns with the MoBazaar theme.
+# MoBazaar web Application
+
+
+MoBazaar is a dynamic and user-friendly e-commerce web application built using PHP, MySQL, HTML, CSS, and JavaScript. It provides a seamless online shopping experience with a modern UI inspired by platforms like Amazon and Flipkart, but customized with a unique red, white, and black color scheme that aligns with the MoBazaar theme.
 
 ✨ Features
 🛍️ Browse products by categories
