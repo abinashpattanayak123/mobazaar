@@ -16,6 +16,64 @@ $stmt->execute();
 $stmt->bind_result($address);
 $stmt->fetch();
 $stmt->close();
+
+
+// fetch cart table
+$email = $_SESSION['email']; // Assuming you already store user email in session
+
+$cart_items = [];
+$total_price = 0;
+
+// Join cart_table with product table to get price and name
+$sql = "SELECT c.product_id, c.quantity, p.name, p.price 
+        FROM cart_table c
+        JOIN product p ON c.product_id = p.product_id
+        WHERE c.user_email = ?";
+
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("s", $email);
+$stmt->execute();
+$result = $stmt->get_result();
+
+while ($row = $result->fetch_assoc()) {
+    $row['subtotal'] = $row['price'] * $row['quantity']; // Multiply quantity with price
+    $total_price += $row['subtotal'];
+    $cart_items[] = $row;
+}
+
+$stmt->close();
+
+
+$order_date = date("Y-m-d");
+
+foreach ($cart_items as $item) {
+    $order_id = uniqid("ORD"); // Generate unique order ID
+
+   $sql = "INSERT INTO `order` (order_id, customer_email, product_id, product_quantity, product_name, order_date, total_amount)
+        VALUES (?, ?, ?, ?, ?, ?, ?)";
+
+$stmt = $conn->prepare($sql);
+$stmt->bind_param(
+    "sssssss",
+    $order_id,
+    $email,
+    $item['product_id'],
+    $item['quantity'],
+    $item['name'],        // ✅ Correct key for product name
+    $order_date,
+    $total_price          // ✅ Correct variable for total amount
+);
+
+    $stmt->execute();
+    $stmt->close();
+}
+
+// Step 3: Delete cart data
+$sql = "DELETE FROM cart_table WHERE user_email = ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("s", $email);
+$stmt->execute();
+$stmt->close();
 ?>
 
 <!DOCTYPE html>
@@ -180,6 +238,8 @@ $stmt->close();
   <button class="payment-option" onclick="selectPayment(this)">Net Banking <i class="bi bi-bank"></i></button>
 </div>
 
+<center><h3>Total Amount to Pay: ₹<?= $total_price ?></h3></center>
+
 <div class="address-box">
   <label for="address" style="font-weight: bold; margin-bottom: 8px; display: block;">Shipping Address:</label>
   <input type="text" id="address" value="<?php echo htmlspecialchars($address); ?>" readonly>
@@ -199,6 +259,8 @@ $stmt->close();
     <p>Thank you for choosing <strong>MoBazaar</strong> 🛍️</p>
   </div>
 </div>
+ 
+
 
 <script>
   function selectPayment(btn) {

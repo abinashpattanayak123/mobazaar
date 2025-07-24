@@ -326,27 +326,20 @@ $email = isset($_SESSION["email"]) ? $_SESSION["email"] : null;
   <a href="home.php">Home</a>
 
   <div class="dropdown">
-    <a href="#">Men</a>
+    <a href="">Men</a>
     <div class="dropdown-content">
       <div class="dropdown-column">
         <h3>Categories</h3>
-        <a>Shirts</a>
-        <a href="#">Polo Shirts</a>
-        <a href="#">T-Shirts</a>
-        <a href="#">Jeans</a>
-        <a href="#">Trousers</a>
-        <a href="#">Outerwear</a>
-        <a href="#">Trackpants</a>
-        <a href="#">Shorts</a>
-      </div>
-      <div class="dropdown-column">
-        <strong>Curations For You</strong>
-        <a href="#">Outdoor</a>
-        <a href="#">USPA Sport</a>
-        <a href="#">Work and Wander</a>
-        <a href="#">135 Year Anniversary</a>
-        <a href="#">Black and White</a>
-        <a href="#">Premium Polo Shirts</a>
+        <a href="category_view.php?gender=men&category=shirt">Shirt</a>
+        <a href="category_view.php?gender=men&category=Polo-Neck">Polo-Neck</a>
+        <a href="category_view.php?gender=men&category=T-Shirts">T-Shirts</a>
+        <a href="category_view.php?gender=men&category=Jeans">Jeans</a>
+        <a href="category_view.php?gender=men&category=Formal-Pant">Formal-Pant</a>
+        <a href="category_view.php?gender=men&category=Casual-Pant">Casual-Pant</a>
+        <a href="category_view.php?gender=men&category=Shorts">Shorts</a>
+        <a href="category_view.php?gender=men&category=Formal-Shoe">Formal-Shoe</a>
+        <a href="category_view.php?gender=men&category=Casual-Shoe">Casual-Shoe</a>
+        
       </div>
     </div>
   </div>
@@ -355,13 +348,16 @@ $email = isset($_SESSION["email"]) ? $_SESSION["email"] : null;
     <a href="#">Women</a>
     <div class="dropdown-content">
       <div class="dropdown-column">
-        <h3>Explore</h3>
-        <a href="#">Tops</a>
-        <a href="#">Jeans</a>
-        <a href="#">T-Shirts</a>
-        <a href="#">Shirts</a>
-        <a href="#">Dresses</a>
-        <a href="#">Skirts</a>
+         <h3>Categories</h3>
+        <a href="category_view.php?gender=women&category=shirt">Shirt</a>
+        <a href="category_view.php?gender=women&category=Polo-Neck">Polo-Neck</a>
+        <a href="category_view.php?gender=women&category=T-Shirts">T-Shirts</a>
+        <a href="category_view.php?gender=women&category=Jeans">Jeans</a>
+        <a href="category_view.php?gender=women&category=Formal-Pant">Formal-Pant</a>
+        <a href="category_view.php?gender=women&category=Casual-Pant">Casual-Pant</a>
+        <a href="category_view.php?gender=women&category=Shorts">Shorts</a>
+        <a href="category_view.php?gender=women&category=Formal-Shoe">Formal-Shoe</a>
+        <a href="category_view.php?gender=women&category=Casual-Shoe">Casual-Shoe</a>
       </div>
     </div>
   </div>
@@ -371,47 +367,23 @@ $email = isset($_SESSION["email"]) ? $_SESSION["email"] : null;
   <div class="dropdown-content">
       <div class="dropdown-column">
         <h3>Explore</h3>
-        <a href="#">Tops</a>
-        <a href="#">Jeans</a>
-        <a href="#">T-Shirts</a>
-        <a href="#">Shirts</a>
-        <a href="#">Dresses</a>
-        <a href="#">Skirts</a>
+        <a href="category_view.php?gender=men&category=Sports-Shoe">Men Sports-Shoe</a>
+        <a href="category_view.php?gender=women&category=Sports-Shoe">Women Sports-Shoe</a>
+        <a href="category_view.php?gender=men&category=Sports-Tshirt">Men Sports_Tshirts</a>
+        <a href="category_view.php?gender=women&category=Sports-Tshirt">Women Sports_Tshirts</a>
+        <a href="category_view.php?gender=men&category=Sports-Pant"> men Sports_Pants</a>
+        <a href="category_view.php?gender=women&category=Sports-Pant">Women Sports_Pants</a>
+        
       </div>
     </div>
 </div>
+
 <div class="dropdown">
   <a href="#">Lifestyle</a>
-  <div class="dropdown-content">
-      <div class="dropdown-column">
-        <h3>Explore</h3>
-        <a href="#">Tops</a>
-        <a href="#">Jeans</a>
-        <a href="#">T-Shirts</a>
-        <a href="#">Shirts</a>
-        <a href="#">Dresses</a>
-        <a href="#">Skirts</a>
-      </div>
-    </div>
+  
 </div>
-
-  <div class="dropdown">
-    <a href="#">Kids</a>
-    <div class="dropdown-content">
-      <div class="dropdown-column">
-        <strong>Kidswear</strong>
-        <a href="#">Polo Shirts</a>
-        <a href="#">Shirts</a>
-        <a href="#">T-Shirts</a>
-        <a href="#">Dresses</a>
-        <a href="#">Shorts</a>
-        <a href="#">2 Piece</a>
-      </div>
-    </div>
-  </div>
-
   <a href="#">Sale</a>
-  <a href="#">Offers</a>
+  <a href="#" onclick="scrollToBottom(event)">Help</a>
 </nav>
   <div class="navbar-right">
    <form action="search.php" method="POST" class="search-form">
@@ -610,6 +582,16 @@ $email = isset($_SESSION["email"]) ? $_SESSION["email"] : null;
       
       setTimeout(() => toast.remove(), 3000);
     };
+
+
+    // help button scrol down page
+function scrollToBottom(event) {
+    event.preventDefault(); // prevent default link action
+    window.scrollTo({
+      top: document.body.scrollHeight,
+      behavior: 'smooth' // for smooth scrolling
+    });
+  }
   </script>
   <?php unset($_SESSION['cart_success']); ?>
 <?php endif; ?>

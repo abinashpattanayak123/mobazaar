@@ -391,9 +391,12 @@ $email = isset($_SESSION["email"]) ? $_SESSION["email"] : null;
   <div class="dropdown-content">
       <div class="dropdown-column">
         <h3>Explore</h3>
-        <a href="#">Sports-Shoe</a>
-        <a href="#">Sports_Tshirts</a>
-        <a href="#">Sports_Pants</a>
+        <a href="category_view.php?gender=men&category=Sports-Shoe">Men Sports-Shoe</a>
+        <a href="category_view.php?gender=women&category=Sports-Shoe">Women Sports-Shoe</a>
+        <a href="category_view.php?gender=men&category=Sports-Tshirt">Men Sports_Tshirts</a>
+        <a href="category_view.php?gender=women&category=Sports-Tshirt">Women Sports_Tshirts</a>
+        <a href="category_view.php?gender=men&category=Sports-Pant"> men Sports_Pants</a>
+        <a href="category_view.php?gender=women&category=Sports-Pant">Women Sports_Pants</a>
         
       </div>
     </div>
@@ -404,7 +407,7 @@ $email = isset($_SESSION["email"]) ? $_SESSION["email"] : null;
   
 </div>
   <a href="#">Sale</a>
-  <a href="#">Offers</a>
+  <a href="#" onclick="scrollToBottom(event)">Help</a>
 </nav>
  <div class="navbar-right">
   <form action="search.php" method="POST" class="search-form">
@@ -666,6 +669,15 @@ const observer = new IntersectionObserver(entries => {
 }, { threshold: 0.1 });
 
 document.querySelectorAll('.animate').forEach(el => observer.observe(el));
+
+// help button scrol down page
+function scrollToBottom(event) {
+    event.preventDefault(); // prevent default link action
+    window.scrollTo({
+      top: document.body.scrollHeight,
+      behavior: 'smooth' // for smooth scrolling
+    });
+  }
 
 </script>
 

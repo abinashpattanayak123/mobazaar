@@ -245,19 +245,19 @@ session_start();
   <a href="home.php">Home</a>
 
   <div class="dropdown">
-    <a href="#">Men</a>
+    <a href="">Men</a>
     <div class="dropdown-content">
       <div class="dropdown-column">
         <h3>Categories</h3>
-        <a href="#">Shirt</a>
-        <a href="#">Polo-Neck</a>
-        <a href="#">T-Shirts</a>
-        <a href="#">Jeans</a>
-        <a href="#">Formal-Pant</a>
-        <a href="#">Casual-Pant</a>
-        <a href="#">Shorts</a>
-        <a href="#">Formal-Shoe</a>
-        <a href="#">Casual-Shoe</a>
+        <a href="category_view.php?gender=men&category=shirt">Shirt</a>
+        <a href="category_view.php?gender=men&category=Polo-Neck">Polo-Neck</a>
+        <a href="category_view.php?gender=men&category=T-Shirts">T-Shirts</a>
+        <a href="category_view.php?gender=men&category=Jeans">Jeans</a>
+        <a href="category_view.php?gender=men&category=Formal-Pant">Formal-Pant</a>
+        <a href="category_view.php?gender=men&category=Casual-Pant">Casual-Pant</a>
+        <a href="category_view.php?gender=men&category=Shorts">Shorts</a>
+        <a href="category_view.php?gender=men&category=Formal-Shoe">Formal-Shoe</a>
+        <a href="category_view.php?gender=men&category=Casual-Shoe">Casual-Shoe</a>
         
       </div>
     </div>
@@ -268,15 +268,15 @@ session_start();
     <div class="dropdown-content">
       <div class="dropdown-column">
          <h3>Categories</h3>
-        <a href="#">Shirt</a>
-        <a href="#">Polo-Neck</a>
-        <a href="#">T-Shirts</a>
-        <a href="#">Jeans</a>
-        <a href="#">Formal-Pant</a>
-        <a href="#">Casual-Pant</a>
-        <a href="#">Shorts</a>
-        <a href="#">Formal-Shoe</a>
-        <a href="#">Casual-Shoe</a>
+        <a href="category_view.php?gender=women&category=shirt">Shirt</a>
+        <a href="category_view.php?gender=women&category=Polo-Neck">Polo-Neck</a>
+        <a href="category_view.php?gender=women&category=T-Shirts">T-Shirts</a>
+        <a href="category_view.php?gender=women&category=Jeans">Jeans</a>
+        <a href="category_view.php?gender=women&category=Formal-Pant">Formal-Pant</a>
+        <a href="category_view.php?gender=women&category=Casual-Pant">Casual-Pant</a>
+        <a href="category_view.php?gender=women&category=Shorts">Shorts</a>
+        <a href="category_view.php?gender=women&category=Formal-Shoe">Formal-Shoe</a>
+        <a href="category_view.php?gender=women&category=Casual-Shoe">Casual-Shoe</a>
       </div>
     </div>
   </div>
@@ -286,9 +286,12 @@ session_start();
   <div class="dropdown-content">
       <div class="dropdown-column">
         <h3>Explore</h3>
-        <a href="#">Sports-Shoe</a>
-        <a href="#">Sports_Tshirts</a>
-        <a href="#">Sports_Pants</a>
+        <a href="category_view.php?gender=men&category=Sports-Shoe">Men Sports-Shoe</a>
+        <a href="category_view.php?gender=women&category=Sports-Shoe">Women Sports-Shoe</a>
+        <a href="category_view.php?gender=men&category=Sports-Tshirt">Men Sports_Tshirts</a>
+        <a href="category_view.php?gender=women&category=Sports-Tshirt">Women Sports_Tshirts</a>
+        <a href="category_view.php?gender=men&category=Sports-Pant"> men Sports_Pants</a>
+        <a href="category_view.php?gender=women&category=Sports-Pant">Women Sports_Pants</a>
         
       </div>
     </div>
@@ -299,7 +302,7 @@ session_start();
   
 </div>
   <a href="#">Sale</a>
-  <a href="#">Offers</a>
+  <a href="#" onclick="scrollToBottom(event)">Help</a>
 </nav>
     <div class="navbar-right">
      <form action="search.php" method="POST" class="search-form">
@@ -320,7 +323,7 @@ session_start();
     <div class="sidebar">
       <h3>👤 Account</h3>
       <a href="#" class="active">Account Overview</a>
-      <a href="#"><i class="bi bi-box-seam"></i> My Orders</a>
+      <a href="my_orders.php"><i class="bi bi-box-seam"></i> My Orders</a>
       <a href="#"><i class="bi bi-heart"></i> Wishlist</a>
       <a href="#"><i class="bi bi-house"></i> Addresses</a>
       <a href="#"><i class="bi bi-gear"></i> Account Settings</a>
@@ -353,6 +356,73 @@ session_start();
       </div>
     </div>
   </div>
+  <!-- Footer -->
+<footer style="background:#000; color:white; padding:50px 30px;">
+  <div style="display:flex; flex-wrap:wrap; justify-content:space-between; gap:30px; max-width:1200px; margin:auto;">
+    <!-- Support -->
+    <div>
+      <h3 style="margin-bottom:15px;">SUPPORT <i class="bi bi-info-circle-fill"></i></h3>
+      <ul style="list-style:none; padding:0;">
+        <li><a href="#" style="color:white; text-decoration:none;">Contact Us</a></li>
+        <li><a href="#" style="color:white; text-decoration:none;">Promotions & Sale</a></li>
+        <li><a href="#" style="color:white; text-decoration:none;">Track Order</a></li>
+        <li><a href="#" style="color:white; text-decoration:none;">Shoe Care</a></li>
+        <li><a href="#" style="color:white; text-decoration:none;">Return & Exchange</a></li>
+        <li><a href="#" style="color:white; text-decoration:none;">Sitemap</a></li>
+      </ul>
+    </div>
 
+    <!-- About -->
+    <div>
+      <h3 style="margin-bottom:15px;">ABOUT <i class="bi bi-file-person-fill"></i></h3>
+      <ul style="list-style:none; padding:0;">
+        <li><a href="#" style="color:white; text-decoration:none;">Company</a></li>
+        <li><a href="#" style="color:white; text-decoration:none;">Careers</a></li>
+        <li><a href="#" style="color:white; text-decoration:none;">Press Center</a></li>
+        <li><a href="#" style="color:white; text-decoration:none;">Sustainability</a></li>
+        <li><a href="#" style="color:white; text-decoration:none;">Investors</a></li>
+      </ul>
+    </div>
+
+    <!-- Stay Up to Date -->
+    <div>
+      <h3 style="margin-bottom:15px;">STAY UP TO DATE</h3>
+      <div style="display:flex; gap:10px;">
+        <i class="bi bi-instagram"></i>Instagram
+        <i class="bi bi-youtube"></i>YouTube
+        <i class="bi bi-facebook"></i>Facebook
+      </div>
+    </div>
+
+    <!-- Explore -->
+    <div>
+      <h3 style="margin-bottom:15px;">EXPLORE</h3>
+      <div style="display:flex; flex-direction:column; gap:10px;">
+        <button style="padding:8px 16px; border:1px solid white; background:none; color:white; border-radius:5px;">APP</button>
+        <button style="padding:8px 16px; border:1px solid white; background:none; color:white; border-radius:5px;">TRACK</button>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:40px; text-align:center; border-top:1px solid #444; padding-top:20px;">
+    <button style="padding:10px 20px; border:1px solid white; background:none; color:white; border-radius:5px;">
+      🇮🇳 INDIA
+    </button>
+    <p style="margin-top:10px; font-size:14px;">© MoBazaar 2025. All rights reserved.</p>
+  </div>
+</footer>
+<script>
+  // help button scrol down page
+function scrollToBottom(event) {
+    event.preventDefault(); // prevent default link action
+    window.scrollTo({
+      top: document.body.scrollHeight,
+      behavior: 'smooth' // for smooth scrolling
+    });
+  }
+
+  
+
+</script>
 </body>
 </html>
