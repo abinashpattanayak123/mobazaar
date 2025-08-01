@@ -35,8 +35,8 @@ $email = isset($_SESSION["email"]) ? $_SESSION["email"] : null;
   padding: 20px 30px;
   color: white;
   position: sticky;
-  top: 0;
-  z-index: 999;
+  
+   
 }
 
 

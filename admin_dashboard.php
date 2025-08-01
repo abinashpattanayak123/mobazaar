@@ -39,16 +39,6 @@ if (!isset($_SESSION['is_admin'])) {
         <p>View all registered customers</p>
       </a>
 
-      <a href="delete_customer.php" class="card">
-        <h3>Delete Customer</h3>
-        <p>Remove specific customer data</p>
-      </a>
-
-      <a href="sale_entry.php" class="card">
-        <h3>Sale Entry</h3>
-        <p>Insert sales records</p>
-      </a>
-
       <a href="sales_status.php" class="card">
         <h3>Sales Status</h3>
         <p>View sales summaries</p>
