@@ -432,7 +432,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['search_term'])) {
           <?php endif; ?>
           <div class="product-name"><?php echo $row['name']; ?></div>
           <div class="product-price">₹<?php echo $row['price']; ?></div>
-          <button class="buy-now-btn" onclick="window.location.href='product_details.php?product_id=<?php echo $row['product_id']; ?>'">Buy Now</button>
+          <button class="buy-now-btn" onclick="window.location.href='product_details.php?product_id=<?php echo $row['product_id']; ?>'">Buy Now <i class="bi bi-lightning-charge-fill"></i></button>
 
         </div>
       <?php endwhile; ?>

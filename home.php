@@ -11,6 +11,7 @@ $email = isset($_SESSION["email"]) ? $_SESSION["email"] : null;
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>MoBazaar - Home</title>
+  <link rel="icon" type="image/png" href="axisbank.png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
   <style>
     /* Reset & Base */
@@ -35,7 +36,8 @@ $email = isset($_SESSION["email"]) ? $_SESSION["email"] : null;
   padding: 20px 30px;
   color: white;
   position: sticky;
-  
+   top: 0;             /* This is required */
+  z-index: 1000; 
    
 }
 
@@ -337,9 +339,69 @@ $email = isset($_SESSION["email"]) ? $_SESSION["email"] : null;
     color: red;
   }
 
+  .hero-section {
+  text-align: center;
+  padding: 60px 20px 30px;
+  background-color: #fff;
+}
+
+.hero-section h1 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.hero-section p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+.icon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.icon-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
+  transition: transform 0.3s ease;
+}
+
+.icon-card:hover {
+  transform: scale(1.03);
+}
+
+.icon-card img {
+  width: 100%;
+  display: block;
+  border-radius: 6px;
+}
+
+.icon-title {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 6px 12px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+
+
   </style>
 </head>
 <body>
+  
 
 <!-- Navbar -->
 <header class="navbar">
@@ -523,6 +585,32 @@ $email = isset($_SESSION["email"]) ? $_SESSION["email"] : null;
   <source src="skechers.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
+
+<!-- card category section -->
+<div class="hero-section">
+  <h1>ICONS, REINVENTED</h1>
+  <p>SHOP THE LATEST & GREATEST</p>
+
+  <div class="icon-grid">
+    <div class="icon-card">
+      <img src="addcard7.jpg" alt="Puma for Scuderia">
+      <div class="icon-title">PUMA FOR SCUDERIA</div>
+    </div>
+    <div class="icon-card">
+      <img src="addcard10.jpg" alt="City Away Kit">
+      <div class="icon-title">CITY AWAY KIT</div>
+    </div>
+    <div class="icon-card">
+      <img src="addcard9.jpg" alt="Palermo">
+      <div class="icon-title">PALERMO</div>
+    </div>
+    <div class="icon-card">
+      <img src="addcard11.jpg" alt="Nitro">
+      <div class="icon-title">NITRO</div>
+    </div>
+  </div>
+</div>
+
 <!-- Product Cards -->
 <?php
 $sql = "SELECT * FROM product";
@@ -678,6 +766,7 @@ function scrollToBottom(event) {
       behavior: 'smooth' // for smooth scrolling
     });
   }
+  
 
 </script>
 
