@@ -8,6 +8,7 @@ session_start();
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>My Profile - MoBazaar</title>
+   <link rel="icon" type="image/png" href="favlogo.jpeg">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
   <style>
     * {
@@ -339,7 +340,7 @@ session_start();
       <div class="trending">
         <div class="product-card">
           <span class="discount">-55%</span>
-          <img src="img/shoe1.jpg" alt="Product 1" />
+          <img src="Adidas.jpeg" alt="Product 1" />
         </div>
         <div class="product-card">
           <span class="discount">-50%</span>

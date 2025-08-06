@@ -23,6 +23,7 @@ if ($result->num_rows > 0) {
 <html>
 <head>
     <title>Sales Status - MoBazaar</title>
+     <link rel="icon" type="image/png" href="favlogo.jpeg">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>

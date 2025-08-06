@@ -28,6 +28,7 @@ $result = $stmt->get_result();
 <html>
 <head>
     <title>My Orders - MoBazaar</title>
+     <link rel="icon" type="image/png" href="favlogo.jpeg">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <style>
         body {

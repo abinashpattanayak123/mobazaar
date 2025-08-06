@@ -21,6 +21,7 @@ if (isset($_GET['gender']) && isset($_GET['category'])) {
 <html>
 <head>
   <title><?php echo ucfirst($gender) . ' - ' . ucfirst($category); ?> | MoBazaar</title>
+   <link rel="icon" type="image/png" href="favlogo.jpeg">
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
   <style>
      * {

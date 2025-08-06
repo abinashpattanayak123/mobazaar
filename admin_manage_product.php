@@ -22,6 +22,7 @@ $result = $conn->query("SELECT * FROM product");
 <head>
   <meta charset="UTF-8">
   <title>Manage Products - MoBazaar</title>
+   <link rel="icon" type="image/png" href="favlogo.jpeg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {

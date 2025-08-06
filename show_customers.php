@@ -16,6 +16,7 @@ $result = $conn->query($sql);
 <html>
 <head>
     <title>MoBazaar - Customer List</title>
+     <link rel="icon" type="image/png" href="favlogo.jpeg">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <style>
         body {
