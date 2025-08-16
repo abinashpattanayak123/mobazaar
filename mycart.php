@@ -248,7 +248,7 @@ $total = 0;
   <input type="text" name="search_term" placeholder="Search" class="search-input" required/>
   <button type="submit" title="Search"><i class="bi bi-search"></i></button>
 </form>
-    <button class="icon-btn">❤️</button>
+    <button class="icon-btn">🤍</button>
     <button class="icon-btn"><a href="mycart.php" style="color: white; text-decoration: none;">🛒</a></button>
     <div class="user-dropdown">
       <?php if ($email): ?>

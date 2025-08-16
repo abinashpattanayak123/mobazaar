@@ -396,7 +396,59 @@ $email = isset($_SESSION["email"]) ? $_SESSION["email"] : null;
   text-transform: uppercase;
 }
 
+.brand-row {
+  width: 100%;
+  
+  padding: 20px 0;
+  overflow-x: auto; /* enable horizontal scroll */
+  white-space: nowrap;
+}
 
+.brand-title {
+  color: #fff;
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 24px;
+  letter-spacing: 2px;
+}
+
+/* Horizontal scroll container */
+.brand-slider {
+  display: flex;
+  gap: 20px;
+  padding: 0 20px;
+}
+
+/* Each brand card */
+.brand-card {
+  min-width: 150px;
+  max-width: 200px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.brand-card img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+/* Hover effect */
+.brand-card:hover {
+  transform: scale(1.08);
+}
+.brand-row {
+  overflow-x: auto;
+  scrollbar-width: none; /* Firefox */
+}
+
+.brand-row::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
 
   </style>
 </head>
@@ -477,7 +529,7 @@ $email = isset($_SESSION["email"]) ? $_SESSION["email"] : null;
   <button type="submit" title="Search"><i class="bi bi-search"></i></button>
 </form>
 
-  <button class="icon-btn">❤️</button>
+  <button class="icon-btn">🤍</button>
   <button class="icon-btn" onclick="window.location.href='mycart.php'">🛒</button>
 
   <div class="user-dropdown">
@@ -546,21 +598,36 @@ $email = isset($_SESSION["email"]) ? $_SESSION["email"] : null;
 
 <!-- Sale Banner with Countdown Overlay -->
 <div style="position: relative; width: 100%; margin-top: 20px;">
-  <img src="countdown.jpeg" alt="Sale Banner" style="width: 100%; height: auto; display: block;" class="animate">
+  <img src="https://cdn.hemden.de/media/image/89/5f/d5/US_Polo_Assn_Hemden_Teaser.jpg" alt="Sale Banner" style="width: 100%; height: auto; display: block;" class="animate">
 
   <!-- Countdown Overlay -->
-  <div style="position: absolute; right: 50px; top: 50%; transform: translateY(-50%); color: black; text-align: center;">
-    <h2 style="font-size: 32px; margin-bottom: 10px;">AFTER HOUR STEALS</h2>
-    <p style="margin-bottom: 10px;">Auto-applied at checkout</p>
-    <p style="font-size: 14px; margin-bottom: 20px;">Ends in</p>
-    <div style="display: flex; gap: 20px; font-size: 24px;" id="countdown">
+  <div style="position: absolute; 
+            bottom: 30px; 
+            left: 50%; 
+            transform: translateX(-42%);  /* was -50%, now shifted right */
+            color: #600000; 
+            text-align: center;">
+              
+    
+    
+    <p style="font-size: 14px; margin-bottom: 20px;"> GET 33% OFF ON EVERY PRODUCT</p>
+    
+    <div style="display: flex; justify-content: center; gap: 20px; font-size: 24px;" id="countdown">
       <div><span id="hours">00</span><br><small>HOURS</small></div>
       <div><span id="minutes">00</span><br><small>MINUTES</small></div>
       <div><span id="seconds">00</span><br><small>SECONDS</small></div>
     </div>
-    <button style="margin-top: 20px; padding: 10px 20px; background: white; color: black; font-weight: bold; border: none; cursor: pointer;">SHOP NOW <i class="bi bi-handbag-fill"></i> </button>
+    
+    <button style="margin-top: 20px; padding: 10px 20px; background: #000033 ; color: white; font-weight: bold; border: none; cursor: pointer; border-radius: 5px;">
+      SHOP NOW <i class="bi bi-handbag-fill"></i>
+    </button>
   </div>
 </div>
+
+    </br>
+    <!-- Sale Banner  -->
+<div style="position: relative; width: 100%; margin-top: 20px;">
+  <img src="" alt="Sale Banner" style="width: 100%; height: auto; display: block;" class="animate">
     </br>
 <!-- banner1-->
 <video autoplay muted loop playsinline
@@ -576,7 +643,7 @@ $email = isset($_SESSION["email"]) ? $_SESSION["email"] : null;
 
 <!-- Sale Banner  -->
 <div style="position: relative; width: 100%; margin-top: 20px;">
-  <img src="sale1.jpeg" alt="Sale Banner" style="width: 100%; height: auto; display: block;" class="animate">
+  <img src="https://corporate.zalando.com/sites/default/files/media/hops21_wsw_del1_cdoor_alicia_096_300_gracol_1484_714_logo_centered.jpg" alt="Sale Banner" style="width: 100%; height: auto; display: block;" class="animate">
     </br>
   <!-- banner1-->
 <video autoplay muted loop playsinline
@@ -610,6 +677,48 @@ $email = isset($_SESSION["email"]) ? $_SESSION["email"] : null;
     </div>
   </div>
 </div>
+<!-- Full Width Brand Row -->
+ <center><h1>TOP BRANDS</h1></center>
+<section class="brand-row">
+  
+  <div class="brand-slider">
+     <div class="brand-card">
+      <img src="Levis.png" alt="levis">
+    </div>
+    <div class="brand-card">
+      <img src="Adidas.png" alt="Adidas">
+    </div>
+   
+    <div class="brand-card">
+      <img src="h&m.png" alt="H&M">
+    </div>
+    <div class="brand-card">
+      <img src="th.png" alt="tommy Hilfiger">
+    </div>
+    <div class="brand-card">
+      <img src="lacoste.png" alt="Lacoste">
+    </div>
+    <div class="brand-card">
+      <img src="gucci.png" alt="Gucci">
+    </div>
+    <div class="brand-card">
+      <img src="nike.png" alt="Nike">
+    </div>
+    <div class="brand-card">
+      <img src="lc.png" alt="Lee Cooper">
+    </div>
+    <div class="brand-card">
+      <img src="lp.png" alt="Louis Phillipe">
+    </div>
+    <div class="brand-card">
+      <img src="uspa1.png" alt="USPA">
+    </div>
+    <div class="brand-card">
+      <img src="bh.png" alt="Being Human">
+    </div>
+
+  </div>
+</section>
 
 <!-- Product Cards -->
 <?php

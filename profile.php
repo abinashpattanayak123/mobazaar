@@ -1,5 +1,8 @@
 <?php 
 session_start(); 
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -146,18 +149,25 @@ session_start();
     }
 
     .product-card {
-      width: 180px;
-      background-color: #f9f9f9;
-      padding: 15px;
-      border-radius: 10px;
-      box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
-      text-align: center;
-    }
+  width: 180px;
+  height: 180px; /* make it square */
+  background-color: #f9f9f9;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
-    .product-card img {
-      max-width: 100%;
-      border-radius: 8px;
-    }
+.product-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* keeps the aspect ratio */
+  border-radius: 8px;
+}
 
     .discount {
       background-color: red;
@@ -233,6 +243,53 @@ session_start();
   .search-form button:hover {
     color: red;
   }
+
+  .faq-section {
+  margin-top: 40px;
+  background: #f9f9f9;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+.faq-section h2 {
+  margin-bottom: 20px;
+  font-size: 22px;
+  color: #000;
+}
+
+.faq {
+  margin-bottom: 20px;
+}
+
+.faq h4 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.faq p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.5;
+}
+
+.faq-links {
+  margin-top: 15px;
+}
+
+.faq-links a {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.faq-links a.deactivate {
+  color: blue;
+}
+
+.faq-links a.delete {
+  color: red;
+}
   </style>
 </head>
 <body>
@@ -310,7 +367,7 @@ session_start();
   <input type="text" name="search_term" placeholder="Search" class="search-input" required/>
   <button type="submit" title="Search"><i class="bi bi-search"></i></button>
 </form>
-      <button class="icon-btn">❤️</button>
+      <button class="icon-btn">🤍</button>
       <button class="icon-btn" onclick="window.location.href='mycart.php'">🛒</button>
       <div class="user-dropdown">
         <form action="profile.php" method="GET" style="display:inline;">
@@ -325,11 +382,11 @@ session_start();
       <h3>👤 Account</h3>
       <a href="#" class="active">Account Overview</a>
       <a href="my_orders.php"><i class="bi bi-box-seam"></i> My Orders</a>
+      <a href="my_info.php"><i class="bi bi-info-circle"></i> My Info</a>
       <a href="#"><i class="bi bi-heart"></i> Wishlist</a>
-      <a href="#"><i class="bi bi-house"></i> Addresses</a>
       <a href="#"><i class="bi bi-gear"></i> Account Settings</a>
       <br><br>
-      <a href="logout.php" style="color: red; font-weight: bold;"><i class="bi bi-box-arrow-left"></i> Logout</a>
+      <a href="logout.php" style="color: red; font-weight: bold; font-size:20px; padding:11px 30px; display:inline-block;"><i class="bi bi-power"></i> Logout</a>
     </div>
 
     <div class="main-content">
@@ -339,24 +396,59 @@ session_start();
       <h2>TRENDING NOW</h2>
       <div class="trending">
         <div class="product-card">
-          <span class="discount">-55%</span>
-          <img src="Adidas.jpeg" alt="Product 1" />
+          <span class="discount">-33%</span>
+          <img src="salelogo.jpeg" alt="Product 1" />
         </div>
         <div class="product-card">
           <span class="discount">-50%</span>
-          <img src="img/shoe2.jpg" alt="Product 2" />
+          <img src="salelogo2.jpeg" alt="Product 2" />
         </div>
         <div class="product-card">
-          <span class="discount">-55%</span>
-          <img src="img/shoe3.jpg" alt="Product 3" />
+          <span class="discount">-25%</span>
+          <img src="salelogo3.jpeg" alt="Product 3" />
         </div>
         <div class="product-card">
-          <span class="discount">-45%</span>
-          <img src="img/shoe4.jpg" alt="Product 4" />
+          <span class="discount">-15%</span>
+          <img src="salelogo4.jpeg" alt="Product 4" />
         </div>
       </div>
-    </div>
+    </div> 
+    
   </div>
+ 
+
+  
+ <!-- FAQ Section -->
+<div class="faq-section">
+  <h2>FAQs</h2>
+  
+  <div class="faq">
+    <h4>What happens when I update my email address (or mobile number)?</h4>
+    <p>Your login email id (or mobile number) changes, likewise. You'll receive all your account-related communication on your updated email address (or mobile number).</p>
+  </div>
+
+  <div class="faq">
+    <h4>When will my MoBazaar account be updated with the new email address (or mobile number)?</h4>
+    <p>It happens as soon as you confirm the verification code sent to your email (or mobile) and save the changes.</p>
+  </div>
+
+  <div class="faq">
+    <h4>What happens to my existing MoBazaar account when I update my email address (or mobile number)?</h4>
+    <p>Updating your email address (or mobile number) doesn’t invalidate your account. Your account remains fully functional. You'll continue seeing your order history, saved information and personal details.</p>
+  </div>
+
+  <div class="faq">
+    <h4>Does my Seller account get affected when I update my email address?</h4>
+    <p>MoBazaar has a 'single sign-on' policy. Any changes will reflect in your Seller account also.</p>
+  </div>
+
+  <div class="faq-links">
+    <a href="#" class="deactivate">Deactivate Account</a> |
+    <a href="#" class="delete">Delete Account</a>
+  </div>
+</div>
+ 
+
   <!-- Footer -->
 <footer style="background:#000; color:white; padding:50px 30px;">
   <div style="display:flex; flex-wrap:wrap; justify-content:space-between; gap:30px; max-width:1200px; margin:auto;">

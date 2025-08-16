@@ -93,6 +93,23 @@
     .register-link a:hover {
       text-decoration: underline;
     }
+    .login-btn {
+  width: 100%;
+  background-color: rgb(251, 10, 10);
+  color: #000;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease; /* Smooth animation */
+}
+
+.login-btn:hover {
+  background-color: rgb(215, 4, 4);
+  transform: scale(1.05); /* Slight zoom */
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.7); /* Glow effect */
+}
   </style>
 </head>
 <body>
@@ -115,7 +132,7 @@
         <label for="showPassword">Show Password</label>
       </div>
 
-      <button type="submit" class="login-btn" name="login">Login </button>
+      <button type="submit" class="login-btn" name="login"> <i class="bi bi-box-arrow-in-right"></i><b> Login</b> </button>
     </form>
 
     <div class="register-link">

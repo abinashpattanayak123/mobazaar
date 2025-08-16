@@ -391,7 +391,7 @@ $email = isset($_SESSION["email"]) ? $_SESSION["email"] : null;
   <input type="text" name="search_term" placeholder="Search" class="search-input" required/>
   <button type="submit" title="Search"><i class="bi bi-search"></i></button>
 </form>
-    <button class="icon-btn">❤️</button>
+    <button class="icon-btn">🤍</button>
     <button class="icon-btn" onclick="window.location.href='mycart.php'">🛒</button>
     <div class="user-dropdown">
       <?php if ($email): ?>
