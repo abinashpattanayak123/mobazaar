@@ -450,6 +450,47 @@ $email = isset($_SESSION["email"]) ? $_SESSION["email"] : null;
   display: none; /* Chrome, Safari */
 }
 
+.slider {
+  width: 100%;
+  max-height: 400px;
+  overflow: hidden;
+  position: relative;
+}
+
+.slider img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  display: none;
+}
+
+.slider img.active {
+  display: block;
+}
+
+/* Dots container */
+.dots {
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* Dot style */
+.dot {
+  height: 12px;
+  width: 12px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dot.active {
+  background-color: #333;
+}
+
+
   </style>
 </head>
 <body>
@@ -587,12 +628,22 @@ $email = isset($_SESSION["email"]) ? $_SESSION["email"] : null;
 
 <!-- Image Slider -->
 <div class="slider animate">
-  <img src="sliderimg.jpeg" class="active" alt="Slider 1">
-  <img src="slider22.jpg" alt="Slider 2">
-  <img src="slider33.jpg" alt="Slider 3">
+  <img src="https://sslimages.shoppersstop.com/sys-master/root/h72/hb3/32097849770014/levis-web_a1.jpg" class="active" alt="Slider 1">
+  <img src="https://media.licdn.com/dms/image/v2/C511BAQF-foLFSXDfNw/company-background_10000/company-background_10000/0/1583990454485/lee_cooper_apparel_footwear_cover?e=2147483647&v=beta&t=FAaeSal_4Y1grFVGF8z8OxyJ3aAgLg7GIi2VSfvTj2A" alt="Slider 1">
+  <img src="https://m.media-amazon.com/images/S/aplus-media-library-service-media/7594ac93-e64f-4462-8c05-7ebf21935573.__CR0,0,970,300_PT0_SX970_V1___.jpg" alt="Slider 2">
+  <img src="https://images.jdmagicbox.com/comp/temp/deals/fb90a89cf53f36dd2a8ee02c796f10ea-2iztp.jpg" alt="Slider 3">
+  <img src="https://www.designeroutletkrakow.pl/fileadmin/user_upload/ros/shops/header_image_-_2340%C3%97585_tommy_hilfiger.jpg" alt="Slider 3">
+  <img src="https://3alababak.com/cdn/shop/collections/1d04c876-ee7c-4085-a3ae-3eed92367c1d.__CR0_0_970_300_PT0_SX970_V1____1.jpg?v=1697149921" alt="Slider 3">
 </div>
-<!--blank space   -->
-
+<!--scroller work   -->
+<div class="dots">
+  <span class="dot active"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+</div>
 
 
 
@@ -618,7 +669,7 @@ $email = isset($_SESSION["email"]) ? $_SESSION["email"] : null;
       <div><span id="seconds">00</span><br><small>SECONDS</small></div>
     </div>
     
-    <button style="margin-top: 20px; padding: 10px 20px; background: #000033 ; color: white; font-weight: bold; border: none; cursor: pointer; border-radius: 5px;">
+    <button style="margin-top: 20px; padding: 10px 20px; background: #000033 ; color: white; font-weight: bold; border: none; cursor: pointer; border-radius: 10px;">
       SHOP NOW <i class="bi bi-handbag-fill"></i>
     </button>
   </div>
@@ -627,31 +678,118 @@ $email = isset($_SESSION["email"]) ? $_SESSION["email"] : null;
     </br>
     <!-- Sale Banner  -->
 <div style="position: relative; width: 100%; margin-top: 20px;">
-  <img src="" alt="Sale Banner" style="width: 100%; height: auto; display: block;" class="animate">
-    </br>
+  <img src="https://m.media-amazon.com/images/G/31/img2020/fashion/MA2020/ApparelP0/4._CB426496737_.jpg" 
+       alt="Sale Banner" 
+       style="width: 100%; height: auto; display: block;" 
+       class="animate">
+
+  <!-- Button -->
+  <button style="
+  position: absolute; 
+  bottom: 20px; 
+  left: 62%;   /* push right */
+  background-color: #005336; 
+  color: white; 
+  border: none; 
+  padding: 12px 25px; 
+  font-size: 16px; 
+  border-radius: 1px; 
+  cursor: pointer;
+  font-weight: bold;
+  
+">
+    SHOP NOW <i class="bi bi-handbag-fill"></i>
+  </button>
+</div>
+   
+</br>
 <!-- banner1-->
-<video autoplay muted loop playsinline
-  style="width: 100%; max-height: 500px; object-fit: cover; display: block; border-radius: 1px;"
-  class="animate">
-  <source src="h&m.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+<!-- banner1 video work  h&m-->
+<div style="position: relative; width: 100%; max-height: 600px; overflow: hidden; border-radius: 1px;">
+
+  <!-- Background video -->
+  <video autoplay muted loop playsinline
+    style="width: 100%; height: 100%; object-fit: cover; display: block;"
+  >
+    <source src="h&m.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Transparent overlay -->
+  <div style="
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 20px;
+  ">
+  
+    
     
 
+    <!-- Button (moved down with extra margin) -->
+    <button style="
+      background-color: red;
+      color: white;
+      border: none;
+      padding: 6px 40px;
+      font-size: 18px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      margin-top: 550px; /* pushes button down */
+      
+    ">
+      EXPLORE NOW <i class="bi bi-arrow-right"></i>
+    </button>
+  </div>
 
+</div>
+    
 
+    <!--puma banner -->
+<div style="position: relative; width: 100%; margin-top: 20px;">
+  <img src="https://50-sport.com/wp-content/uploads/2020/02/PUMA_05_CREATIVE04.jpg" alt="Sale Banner" style="width: 100%; height: auto; display: block;" class="animate">
+    
 
 <!-- Sale Banner  -->
-<div style="position: relative; width: 100%; margin-top: 20px;">
-  <img src="https://corporate.zalando.com/sites/default/files/media/hops21_wsw_del1_cdoor_alicia_096_300_gracol_1484_714_logo_centered.jpg" alt="Sale Banner" style="width: 100%; height: auto; display: block;" class="animate">
-    </br>
-  <!-- banner1-->
-<video autoplay muted loop playsinline
-  style="width: 100%; max-height: 600px; object-fit: cover; display: block; border-radius: 1px;"
-  class="animate">
-  <source src="skechers.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+<div style="position: relative; width: 100%; margin-top: 20px; overflow: hidden;">
+  <img src="https://www.tcmall.uz/_next/image?url=https%3A%2F%2Ftcmall.uz%2Fstrapi%2Fuploads%2FTH_UZB_web_1920h640_Arina_Starczeva_f52c095f75.jpg&w=3840&q=75" 
+       alt="Sale Banner" 
+       style="width: 100%; height: auto; display: block;" 
+       class="animate">
+
+  <!-- Overlay button -->
+  <button style="
+    position: absolute;
+    bottom: 15%;         /* adjust vertical position */
+    right: 19%;          /* adjust horizontal position */
+    transform: translateY(50%);
+    background-color: #c01a1aff;  /* Tommy Hilfiger navy */
+    color: white;
+    border: none;
+    padding: 10px 17px;
+    font-size: 18px;
+    border-radius: 1px;
+    cursor: pointer;
+    font-weight: bold;
+    border: 1px solid white;
+  ">
+    Get Now <i class="bi bi-arrow-bar-right"></i>
+  </button>
+</div>
+
+  <!-- Red line -->
+<hr style="border: none; height: 4px; background-color: #C8252C; margin: 10px 0;">
+
+<!-- Navy blue line -->
+<hr style="border: none; height: 4px; background-color: #08233D; margin: 10px 0;">
 
 <!-- card category section -->
 <div class="hero-section">
@@ -716,6 +854,26 @@ $email = isset($_SESSION["email"]) ? $_SESSION["email"] : null;
     <div class="brand-card">
       <img src="bh.png" alt="Being Human">
     </div>
+    <div class="brand-card">
+      <img src="https://images.seeklogo.com/logo-png/52/1/versace-logo-png_seeklogo-523045.png" alt="USPA">
+    </div>
+    <div class="brand-card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSJDr0LdgPDdZ876hZcoO4H7rVjx85ayCgDA&s" alt="Being Human">
+    </div>
+    <div class="brand-card">
+      <img src="https://images.seeklogo.com/logo-png/37/2/dnmx-logo-png_seeklogo-376164.png" alt="Louis Phillipe">
+    </div>
+    <div class="brand-card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyfbPZoMgvopvvCFxTQw8OJlaKvTNGzdID5A&s" alt="USPA">
+    </div>
+    <div class="brand-card">
+      <img src="https://images.seeklogo.com/logo-png/33/1/united-colors-of-benetton-logo-png_seeklogo-334181.png" alt="Being Human">
+    </div>
+    <div class="brand-card">
+      <img src="https://images.seeklogo.com/logo-png/61/2/wrogn-black-logo-png_seeklogo-619818.png" alt="USPA">
+    </div>
+    <div class="brand-card">
+      <img src="https://assets.upstox.com/content/assets/images/logos/NSE_EQ%7CINE611L01021.png" alt="Being Human">
 
   </div>
 </section>
@@ -796,9 +954,12 @@ $result = $conn->query($sql);
   </div>
 
   <div style="margin-top:40px; text-align:center; border-top:1px solid #444; padding-top:20px;">
-    <button style="padding:10px 20px; border:1px solid white; background:none; color:white; border-radius:5px;">
-      🇮🇳 INDIA
-    </button>
+  <button style="padding:10px 20px; border:1px solid white; background:none; color:white; border-radius:5px; font-size:16px; display: inline-flex; align-items: center; gap: 6px;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/b/bc/Flag_of_India.png" 
+         alt="India Flag" 
+         style="height:16px; width:auto; vertical-align:middle;">
+    INDIA
+  </button>
     <p style="margin-top:10px; font-size:14px;">© MoBazaar 2025. All rights reserved.</p>
   </div>
 </footer>
@@ -819,15 +980,33 @@ $result = $conn->query($sql);
     }
   });
 
-  // Slider logic
-  const slides = document.querySelectorAll(".slider img");
-  let index = 0;
-  setInterval(() => {
-    slides[index].classList.remove("active");
-    index = (index + 1) % slides.length;
-    slides[index].classList.add("active");
-  }, 3000);
+  let currentIndex = 0;
+let slides = document.querySelectorAll(".slider img");
+let dots = document.querySelectorAll(".dot");
 
+function showSlide(index) {
+  slides.forEach((slide, i) => {
+    slide.classList.remove("active");
+    dots[i].classList.remove("active");
+    if (i === index) {
+      slide.classList.add("active");
+      dots[i].classList.add("active");
+    }
+  });
+}
+
+dots.forEach((dot, index) => {
+  dot.addEventListener("click", () => {
+    currentIndex = index;
+    showSlide(currentIndex);
+  });
+});
+
+// Auto play slider every 3s
+setInterval(() => {
+  currentIndex = (currentIndex + 1) % slides.length;
+  showSlide(currentIndex);
+}, 3000);
   function productdetails(productId) {
     // Redirect silently or send an AJAX request (optional)
     window.location.href = 'product_details.php?product_id=' + productId;
@@ -876,6 +1055,8 @@ function scrollToBottom(event) {
     });
   }
   
+
+
 
 </script>
 
