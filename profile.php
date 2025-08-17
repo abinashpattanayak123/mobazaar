@@ -498,9 +498,12 @@ session_start();
   </div>
 
   <div style="margin-top:40px; text-align:center; border-top:1px solid #444; padding-top:20px;">
-    <button style="padding:10px 20px; border:1px solid white; background:none; color:white; border-radius:5px;">
-      🇮🇳 INDIA
-    </button>
+  <button style="padding:10px 20px; border:1px solid white; background:none; color:white; border-radius:5px; font-size:16px; display: inline-flex; align-items: center; gap: 6px;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/b/bc/Flag_of_India.png" 
+         alt="India Flag" 
+         style="height:16px; width:auto; vertical-align:middle;">
+    INDIA
+  </button>
     <p style="margin-top:10px; font-size:14px;">© MoBazaar 2025. All rights reserved.</p>
   </div>
 </footer>

@@ -106,6 +106,6 @@
   <div class="bag">
     <img src="mobazaar-no-bg.png" alt="MoBazaar Logo">
   </div>
-  <div class="subtitle">Odisha's Biggest Mart</div>
+  <div class="subtitle">Brand Hub Of Odisha</div>
 </body>
 </html>

@@ -490,6 +490,105 @@ $email = isset($_SESSION["email"]) ? $_SESSION["email"] : null;
   background-color: #333;
 }
 
+.banner {
+  position: relative;
+}
+
+.shop-btn {
+  position: absolute;
+  bottom: 20px;
+  left: 62%;
+  background-color: #005336;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  font-size: 16px;
+  border-radius: 1px;
+  cursor: pointer;
+  font-weight: bold;
+
+  /* Initially hidden */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease;
+}
+
+.banner:hover .shop-btn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.banner {
+  position: relative;
+  width: 100%;
+  margin-top: 20px;
+  overflow: hidden;
+}
+
+.banner-img {
+  width: 100%;
+  display: block;
+  height: auto;
+}
+
+/* Overlay styles */
+.overlay {
+  position: absolute;
+  top: 1150px;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-45%);
+  color: #b21313ff;
+  text-align: center;
+}
+
+#countdown {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  font-size: 24px;
+}
+
+.shop-btn1 {
+  margin-top: 20px;
+  padding: 10px 30px;
+  background: #000033;
+  color: white;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  border: 2px solid red;
+  
+
+  /* Start hidden */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease;
+}
+
+/* USPA logo styles */
+.uspa-logo {
+  position: absolute;
+  top: 1000px;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: all 0.6s ease;
+  max-width: 150px;
+  pointer-events: none;
+}
+
+/* Hover effects */
+.banner1:hover .shop-btn1 {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.banner1.hovered .uspa-logo {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+
 
   </style>
 </head>
@@ -648,56 +747,36 @@ $email = isset($_SESSION["email"]) ? $_SESSION["email"] : null;
 
 
 <!-- Sale Banner with Countdown Overlay -->
-<div style="position: relative; width: 100%; margin-top: 20px;">
-  <img src="https://cdn.hemden.de/media/image/89/5f/d5/US_Polo_Assn_Hemden_Teaser.jpg" alt="Sale Banner" style="width: 100%; height: auto; display: block;" class="animate">
+<div class="banner1">
+  <img src="uspa-poster.jpg" alt="Sale Banner" class="banner-img">
 
   <!-- Countdown Overlay -->
-  <div style="position: absolute; 
-            bottom: 30px; 
-            left: 50%; 
-            transform: translateX(-42%);  /* was -50%, now shifted right */
-            color: #600000; 
-            text-align: center;">
-              
-    
-    
-    <p style="font-size: 14px; margin-bottom: 20px;"> GET 33% OFF ON EVERY PRODUCT</p>
-    
-    <div style="display: flex; justify-content: center; gap: 20px; font-size: 24px;" id="countdown">
+  <div class="overlay">
+    <p>GET 33% OFF ON EVERY PRODUCT</p>
+    <div id="countdown">
       <div><span id="hours">00</span><br><small>HOURS</small></div>
       <div><span id="minutes">00</span><br><small>MINUTES</small></div>
       <div><span id="seconds">00</span><br><small>SECONDS</small></div>
     </div>
-    
-    <button style="margin-top: 20px; padding: 10px 20px; background: #000033 ; color: white; font-weight: bold; border: none; cursor: pointer; border-radius: 10px;">
+    <button class="shop-btn1">
       SHOP NOW <i class="bi bi-handbag-fill"></i>
     </button>
   </div>
+
+  <!-- USPA Logo -->
+  <img src="uspa.png" alt="USPA Logo" class="uspa-logo">
 </div>
 
-    </br>
+    
     <!-- Sale Banner  -->
-<div style="position: relative; width: 100%; margin-top: 20px;">
+<div style="position: relative; width: 100%; margin-top: 20px; overflow: hidden;" class="banner">
   <img src="https://m.media-amazon.com/images/G/31/img2020/fashion/MA2020/ApparelP0/4._CB426496737_.jpg" 
        alt="Sale Banner" 
        style="width: 100%; height: auto; display: block;" 
        class="animate">
 
   <!-- Button -->
-  <button style="
-  position: absolute; 
-  bottom: 20px; 
-  left: 62%;   /* push right */
-  background-color: #005336; 
-  color: white; 
-  border: none; 
-  padding: 12px 25px; 
-  font-size: 16px; 
-  border-radius: 1px; 
-  cursor: pointer;
-  font-weight: bold;
-  
-">
+  <button class="shop-btn">
     SHOP NOW <i class="bi bi-handbag-fill"></i>
   </button>
 </div>
@@ -756,8 +835,76 @@ $email = isset($_SESSION["email"]) ? $_SESSION["email"] : null;
     <!--puma banner -->
 <div style="position: relative; width: 100%; margin-top: 20px;">
   <img src="https://50-sport.com/wp-content/uploads/2020/02/PUMA_05_CREATIVE04.jpg" alt="Sale Banner" style="width: 100%; height: auto; display: block;" class="animate">
-    
+  <!-- Villain banner -->
+<div style="position: relative; width: 100%; margin-top: 20px;">
+  <!-- Background Image -->
+  <img src="villain bg2.jpg" alt="Sale Banner" style="width: 100%; height: auto; display: block;" class="animate">
 
+  <!-- Image placeholder over wood stand -->
+  <img id="perfumeImage" src="" 
+       style="position: absolute; 
+              bottom: 280px; 
+              left: 210px; 
+              width: 230px; 
+              height: 350px; 
+              object-fit: contain; 
+              display: none; 
+              transition: opacity 0.5s ease;" />
+
+  <!-- Buttons Overlay -->
+  <div style="position: absolute; bottom: 290px; right: 170px; display: flex; flex-direction: column; align-items: flex-start; gap: 10px;">
+    <div id="perfumeButtons" style="display: flex; gap: 10px;">
+      <button onclick="showPerfume('villain black1.png','BLACK','descBlack', this)" 
+              class="perfume-btn" style="padding: 10px 20px; background: black; color: white; border: 2px solid transparent; border-radius: 5px; cursor: pointer;">BLACK</button>
+      <button onclick="showPerfume('villain hydra1.png','HYDRA','descHydra', this)" 
+              class="perfume-btn" style="padding: 10px 20px; background: rgba(31, 11, 86, 1); color: white; border: 2px solid transparent; border-radius: 5px; cursor: pointer;">HYDRA</button>
+      <button onclick="showPerfume('villain snake.png','SNAKE','descSnake', this)" 
+              class="perfume-btn" style="padding: 10px 20px; background: rgba(158, 3, 3, 1); color: white; border: 2px solid transparent; border-radius: 5px; cursor: pointer;">SNAKE</button>
+      <button onclick="showPerfume('villain desire.png','DESIRE','descDesire', this)" 
+              class="perfume-btn" style="padding: 10px 20px; background: rgba(82, 7, 195, 1); color: white; border: 2px solid transparent; border-radius: 5px; cursor: pointer;">DESIRE</button>
+      <button onclick="showPerfume('villain oud.png','OUD','descOud', this)" 
+              class="perfume-btn" style="padding: 10px 20px; background: rgba(220, 176, 33, 1); color: white; border: 2px solid transparent; border-radius: 5px; cursor: pointer;">OUD</button>
+    </div>
+<br>
+    <!-- Perfume Description -->
+    <div id="perfumeDetails" 
+         style="position: absolute; bottom: -150px; right: 10px; max-width: 800px; background: rgba(0,0,0,0); padding: 15px; border-radius: 8px; color: white; text-align: center;">
+      <h2 id="perfumeTitle" style="margin: 0; font-size: 20px;"></h2>
+
+      <p id="descBlack" style="display:none; margin-top: 8px; font-size: 14px; line-height: 1.5;">
+        Villain Black – Bold and classic fragrance for everyday wear.Bold and classic fragrance for everyday wear.
+      </p>
+      <p id="descHydra" style="display:none; margin-top: 8px; font-size: 14px; line-height: 1.5;">
+        Villain Hydra – Fresh aquatic notes with long-lasting energy that keeps you active all day.
+      </p>
+      <p id="descSnake" style="display:none; margin-top: 8px; font-size: 14px; line-height: 1.5;">
+        Villain Snake – Intense spicy notes crafted for daring personalities who love standing out.
+      </p>
+      <p id="descDesire" style="display:none; margin-top: 8px; font-size: 14px; line-height: 1.5;">
+        Villain Desire – Romantic fragrance with sweet floral tones, perfect for date nights.
+      </p>
+      <p id="descOud" style="display:none; margin-top: 8px; font-size: 14px; line-height: 1.5;">
+        Villain Oud – Premium woody essence with a rich aura, crafted for luxury lovers.
+      </p>
+
+     
+      <!-- Buy Now Button -->
+  <button id="buyNowBtn"
+        onmouseover="this.style.boxShadow='0 0 20px 5px gold';"
+        onmouseout="this.style.boxShadow='';"
+        style="margin-top: 15px; padding: 10px 45px; font-size: 14px;
+               background: yellow; color: maroon; font-weight: bold;
+               border: none; border-radius: 50px; cursor: pointer;
+               display: none; transition: box-shadow .3s ease;">
+  Get Now <i class="bi bi-lightning-fill"></i>
+</button>
+    </div>
+    
+    
+  </div>
+</div>
+
+    
 <!-- Sale Banner  -->
 <div style="position: relative; width: 100%; margin-top: 20px; overflow: hidden;">
   <img src="https://www.tcmall.uz/_next/image?url=https%3A%2F%2Ftcmall.uz%2Fstrapi%2Fuploads%2FTH_UZB_web_1920h640_Arina_Starczeva_f52c095f75.jpg&w=3840&q=75" 
@@ -1056,8 +1203,61 @@ function scrollToBottom(event) {
   }
   
 
+// Select elements
+const banner = document.querySelector('.banner1');
+const uspaLogo = document.querySelector('.uspa-logo');
+
+// Flag to keep logo displayed after first hover
+let logoShown = false;
+
+banner.addEventListener('mouseenter', () => {
+  document.querySelector('.shop-btn1').style.opacity = '1';
+  document.querySelector('.shop-btn1').style.transform = 'translateY(0)';
+
+  // Show USPA logo only once
+  if (!logoShown) {
+    banner.classList.add('hovered');
+    logoShown = true;
+  }
+});
+
+banner.addEventListener('mouseleave', () => {
+  // Hide SHOP NOW button
+  document.querySelector('.shop-btn1').style.opacity = '0';
+  document.querySelector('.shop-btn1').style.transform = 'translateY(20px)';
+});
 
 
+
+function showPerfume(imageSrc, title, descId, btnElement) {
+  // Update bottle image
+  const img = document.getElementById("perfumeImage");
+  img.src = imageSrc;
+  img.style.display = "block";
+
+  // Update title
+  document.getElementById("perfumeTitle").innerText = title;
+
+  // Hide all descriptions
+  document.querySelectorAll("#perfumeDetails p").forEach(p => p.style.display = "none");
+
+  // Show only the selected one
+  document.getElementById(descId).style.display = "block";
+  document.getElementById("buyNowBtn").style.display = "inline-block";
+
+  // Highlight active button
+  const buttons = document.querySelectorAll(".perfume-btn");
+  buttons.forEach(btn => btn.style.border = "2px solid transparent");
+  btnElement.style.border = "2px solid white"
+}
+
+// Show Black by default
+window.onload = function() {
+  const firstBtn = document.querySelector(".perfume-btn");
+  showPerfume('villain black1.png','BLACK','descBlack', firstBtn);
+};
+
+  
 </script>
 
 
