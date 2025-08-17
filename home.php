@@ -270,7 +270,7 @@ $email = isset($_SESSION["email"]) ? $_SESSION["email"] : null;
   .animate {
     opacity: 0;
     transform: translateY(20px);
-    transition: all 0.8s ease-in-out;
+    transition: all 1.5s ease-in-out;
   }
 
   .animate.visible {
@@ -427,7 +427,7 @@ $email = isset($_SESSION["email"]) ? $_SESSION["email"] : null;
   border-radius: 10px;
   padding: 10px;
   text-align: center;
-  transition: transform 0.3s ease;
+  transition: transform 0.5s ease;
 }
 
 .brand-card img {
@@ -510,7 +510,7 @@ $email = isset($_SESSION["email"]) ? $_SESSION["email"] : null;
   /* Initially hidden */
   opacity: 0;
   transform: translateY(20px);
-  transition: all 0.5s ease;
+  transition: all 0.7s ease;
 }
 
 .banner:hover .shop-btn {
@@ -564,7 +564,7 @@ $email = isset($_SESSION["email"]) ? $_SESSION["email"] : null;
   /* Start hidden */
   opacity: 0;
   transform: translateY(20px);
-  transition: all 0.5s ease;
+  transition: all 1.0s ease;
 }
 
 /* USPA logo styles */
@@ -573,7 +573,7 @@ $email = isset($_SESSION["email"]) ? $_SESSION["email"] : null;
   top: 1000px;
   left: 50%;
   transform: translate(-50%, -50%) scale(0);
-  transition: all 0.6s ease;
+  transition: all 2.0s ease;
   max-width: 150px;
   pointer-events: none;
 }
@@ -587,6 +587,16 @@ $email = isset($_SESSION["email"]) ? $_SESSION["email"] : null;
 .banner1.hovered .uspa-logo {
   transform: translate(-50%, -50%) scale(1);
 }
+
+
+
+  
+
+  /* Button hover */
+  #exploreBtn:hover {
+    background-color: darkred;
+    transform: scale(1.5);
+  }
 
 
 
@@ -783,54 +793,65 @@ $email = isset($_SESSION["email"]) ? $_SESSION["email"] : null;
    
 </br>
 <!-- banner1-->
-<!-- banner1 video work  h&m-->
-<div style="position: relative; width: 100%; max-height: 600px; overflow: hidden; border-radius: 1px;">
+<!-- Video Banner with Overlay  united colous benetton-->
+<div style="position: relative; width: 100%; max-height: 600px; overflow: hidden;">
 
   <!-- Background video -->
   <video autoplay muted loop playsinline
-    style="width: 100%; height: 100%; object-fit: cover; display: block;"
-  >
-    <source src="h&m.mp4" type="video/mp4">
+    style="width: 100%; height: 100%; object-fit: cover; display: block; transition: all 2.6s ease-in-out;">
+    <source src="ucb.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 
-  <!-- Transparent overlay -->
+  <!-- Overlay with text & button -->
   <div style="
     position: absolute;
-    top: 0; left: 0;
+    top: 0; left: 170px;
     width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0);
+    background: rgba(0, 0, 0, 0); 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: white;
     text-align: center;
+    color: black;
     padding: 20px;
   ">
-  
     
-    
+    <!-- Logo -->
+    <img src="https://1000logos.net/wp-content/uploads/2020/03/United-Colors-of-Benetton-Logo-1971.png" 
+         alt="United Colors of Benetton"
+         id="logo"
+         style="
+           width: 250px; 
+           margin-bottom: 5px; 
+           opacity: 0.8; 
+           transform: scale(1); 
+           transition: all 0.6s ease-in-out;
+         ">
 
-    <!-- Button (moved down with extra margin) -->
+    <!-- Subheading -->
+    <p style="max-width: 700px; font-size: 18px; line-height: 1.5; margin-bottom: 25px;">
+      The perennial appeal of Geranium Leaf. First introduced in 1998, our Geranium Leaf Body Care 
+      range has grown into a quartet of verdant formulations that remain fresh, vibrant and green.
+    </p>
+
+    <!-- Button -->
     <button style="
-      background-color: red;
+      background-color: green;
       color: white;
       border: none;
-      padding: 6px 40px;
-      font-size: 18px;
-      border-radius: 6px;
+      padding: 12px 35px;
+      font-size: 16px;
+      border-radius: 2px;
       cursor: pointer;
       font-weight: bold;
-      margin-top: 550px; /* pushes button down */
-      
-    ">
-      EXPLORE NOW <i class="bi bi-arrow-right"></i>
+      transition: 0.5s ease;
+    " id="exploreBtn">
+      EXPLORE NOW →
     </button>
   </div>
-
 </div>
-    
 
     <!--puma banner -->
 <div style="position: relative; width: 100%; margin-top: 20px;">
@@ -904,7 +925,7 @@ $email = isset($_SESSION["email"]) ? $_SESSION["email"] : null;
   </div>
 </div>
 
-    
+   
 <!-- Sale Banner  -->
 <div style="position: relative; width: 100%; margin-top: 20px; overflow: hidden;">
   <img src="https://www.tcmall.uz/_next/image?url=https%3A%2F%2Ftcmall.uz%2Fstrapi%2Fuploads%2FTH_UZB_web_1920h640_Arina_Starczeva_f52c095f75.jpg&w=3840&q=75" 
@@ -1114,6 +1135,7 @@ $result = $conn->query($sql);
 
 <!-- Scripts -->
 <script>
+  
   function toggleDropdown() {
     const menu = document.getElementById("userMenu");
     menu.style.display = menu.style.display === "block" ? "none" : "block";
@@ -1255,8 +1277,35 @@ function showPerfume(imageSrc, title, descId, btnElement) {
 window.onload = function() {
   const firstBtn = document.querySelector(".perfume-btn");
   showPerfume('villain black1.png','BLACK','descBlack', firstBtn);
+
+  const logo = document.getElementById("logo");
+    logo.style.opacity = "1";
+    logo.style.transform = "scale(1)";
 };
 
+ // Logo hover effect with JS
+  const logo = document.getElementById("logo");
+
+  logo.addEventListener("mouseover", () => {
+    logo.style.opacity = "1";
+    logo.style.transform = "scale(1.1)";
+  });
+
+  logo.addEventListener("mouseout", () => {
+    logo.style.opacity = "0.8";
+    logo.style.transform = "scale(0.9)";
+  });
+
+  // Button hover effect with JS (instead of inline)
+  const exploreBtn = document.getElementById("exploreBtn");
+
+  exploreBtn.addEventListener("mouseover", () => {
+    exploreBtn.style.backgroundColor = "darkred";
+  });
+
+  exploreBtn.addEventListener("mouseout", () => {
+    exploreBtn.style.backgroundColor = "green";
+  });
   
 </script>
 
