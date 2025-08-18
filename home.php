@@ -905,7 +905,7 @@ $email = isset($_SESSION["email"]) ? $_SESSION["email"] : null;
         Villain Desire – Romantic fragrance with sweet floral tones, perfect for date nights.
       </p>
       <p id="descOud" style="display:none; margin-top: 8px; font-size: 14px; line-height: 1.5;">
-        Villain Oud – Premium woody essence with a rich aura, crafted for luxury lovers.
+        Villain Oud – Premium body essence with a rich aura, crafted for luxury lovers.
       </p>
 
      
