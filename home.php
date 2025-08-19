@@ -690,8 +690,8 @@ $email = isset($_SESSION["email"]) ? $_SESSION["email"] : null;
     <?php else: ?>
       <button class="icon-btn" onclick="toggleDropdown()">👤</button>
       <div class="dropdown-menu" id="userMenu">
-        <a href="login.php">User Login <i class="bi bi-box-arrow-in-right"></i></a>
-        <a href="admin_login.php">Admin Login <i class="bi bi-box-arrow-in-right"></i></a>
+        <a href="login.php">User Login </a>
+        <a href="admin_login.php">Admin Login </a>
       </div>
     <?php endif; ?>
   </div>
@@ -792,7 +792,7 @@ $email = isset($_SESSION["email"]) ? $_SESSION["email"] : null;
 </div>
    
 </br>
-<!-- banner1-->
+
 <!-- Video Banner with Overlay  united colous benetton-->
 <div style="position: relative; width: 100%; max-height: 600px; overflow: hidden;">
 
