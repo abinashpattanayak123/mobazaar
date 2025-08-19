@@ -12,6 +12,8 @@ $email = isset($_SESSION["email"]) ? $_SESSION["email"] : null;
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>MoBazaar - Home</title>
   <link rel="icon" type="image/png" href="favlogo.jpeg">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
   <style>
     /* Reset & Base */
@@ -151,7 +153,7 @@ $email = isset($_SESSION["email"]) ? $_SESSION["email"] : null;
 
     .section-title {
       text-align: center;
-      color: #ff4d4d;
+      color: #980000ff;
       margin-bottom: 30px;
       font-size: 28px;
     }
@@ -163,11 +165,11 @@ $email = isset($_SESSION["email"]) ? $_SESSION["email"] : null;
     }
 
     .product-card {
-      background-color: #f7f7f7;
+      background-color: white;
       border-radius: 10px;
       padding: 15px;
       text-align: center;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      box-shadow: 0 0 10px rgba(0,0,0,0);
       transition: transform 0.2s ease-in-out;
     }
 
@@ -191,7 +193,7 @@ $email = isset($_SESSION["email"]) ? $_SESSION["email"] : null;
     }
 
     .product-card .price {
-      color: #ff4d4d;
+      color: #ee0707ff;
       font-size: 16px;
       font-weight: bold;
     }
@@ -202,57 +204,68 @@ $email = isset($_SESSION["email"]) ? $_SESSION["email"] : null;
       background: #000;
       color: #fff;
       border: none;
-      border-radius: 4px;
+      border-radius: 20px;
       cursor: pointer;
     }
 
     .add-to-cart-btn:hover {
       background-color:rgb(0, 0, 0);
     }
-     .dropdown {
-    position: relative;
-  }
+  .dropdown {
+  position: relative;
+}
 
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #fff;
-    min-width: 200px;
-    padding: 20px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-    z-index: 10;
-    color: black;
-    font-size: 14px;
-  }
+/* Dropdown content */
+.dropdown-content {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fafaf9ff;
+  min-width: 200px;
+  padding: 20px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  z-index: 10;
+  color: black;
+  font-size: 14px;
 
-  .dropdown:hover .dropdown-content {
-    display: flex;
-    gap: 40px;
-  }
+  /* Smooth animation */
+  max-height: 0;          /* Start hidden */
+  opacity: 0;             /* Invisible */
+  overflow: hidden;       /* Hide content */
+  transition: all 0.3s ease-in-out;
+}
 
-  .dropdown-column {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
+/* On hover → animate open */
+.dropdown:hover .dropdown-content {
+  max-height: 500px;      /* Adjust depending on content */
+  opacity: 1;
+}
 
-  .dropdown-column a {
-    color: black;
-    text-decoration: none;
-  }
+/* Columns inside dropdown */
+.dropdown-column {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
 
-  .dropdown-column a:hover {
-    text-decoration: underline;
-    color: red;
-  }
-  a div:hover {
+.dropdown-column a {
+  color: black;
+  text-decoration: none;   /* remove underline */
+  display: block;          /* make the whole line clickable */
+  padding: 5px 0;          /* some spacing */
+}
+
+.dropdown-column a:hover {
+  color: red;
+  text-decoration: none;   /* keep underline hidden */
+  border-bottom: 1px solid red;  /* custom underline effect */
+}
+
+a div:hover {
   transform: scale(1.05);
   transition: 0.3s ease;
   background-color: #cc0000;
 }
-
 
   /* Page load fade-in animation */
   body {
@@ -588,10 +601,6 @@ $email = isset($_SESSION["email"]) ? $_SESSION["email"] : null;
   transform: translate(-50%, -50%) scale(1);
 }
 
-
-
-  
-
   /* Button hover */
   #exploreBtn:hover {
     background-color: darkred;
@@ -617,7 +626,7 @@ $email = isset($_SESSION["email"]) ? $_SESSION["email"] : null;
     <a href="">Men</a>
     <div class="dropdown-content">
       <div class="dropdown-column">
-        <h3>Categories</h3>
+        <h3>Categories <i class="bi bi-three-dots-vertical"></i></h3>
         <a href="category_view.php?gender=men&category=shirt">Shirt</a>
         <a href="category_view.php?gender=men&category=Polo-Neck">Polo-Neck</a>
         <a href="category_view.php?gender=men&category=T-Shirts">T-Shirts</a>
@@ -636,7 +645,7 @@ $email = isset($_SESSION["email"]) ? $_SESSION["email"] : null;
     <a href="#">Women</a>
     <div class="dropdown-content">
       <div class="dropdown-column">
-         <h3>Categories</h3>
+         <h3>Categories <i class="bi bi-three-dots-vertical"></i></h3>
         <a href="category_view.php?gender=women&category=shirt">Shirt</a>
         <a href="category_view.php?gender=women&category=Polo-Neck">Polo-Neck</a>
         <a href="category_view.php?gender=women&category=T-Shirts">T-Shirts</a>
@@ -654,7 +663,7 @@ $email = isset($_SESSION["email"]) ? $_SESSION["email"] : null;
   <a href="#">Sports</a>
   <div class="dropdown-content">
       <div class="dropdown-column">
-        <h3>Explore</h3>
+        <h3>Explore <i class="bi bi-three-dots-vertical"></i></h3>
         <a href="category_view.php?gender=men&category=Sports-Shoe">Men Sports-Shoe</a>
         <a href="category_view.php?gender=women&category=Sports-Shoe">Women Sports-Shoe</a>
         <a href="category_view.php?gender=men&category=Sports-Tshirt">Men Sports_Tshirts</a>
@@ -854,8 +863,9 @@ $email = isset($_SESSION["email"]) ? $_SESSION["email"] : null;
 </div>
 
     <!--puma banner -->
-<div style="position: relative; width: 100%; margin-top: 20px;">
+  <div style="position: relative; width: 100%; margin-top: 20px;">
   <img src="https://50-sport.com/wp-content/uploads/2020/02/PUMA_05_CREATIVE04.jpg" alt="Sale Banner" style="width: 100%; height: auto; display: block;" class="animate">
+   
   <!-- Villain banner -->
 <div style="position: relative; width: 100%; margin-top: 20px;">
   <!-- Background Image -->
@@ -924,9 +934,34 @@ $email = isset($_SESSION["email"]) ? $_SESSION["email"] : null;
     
   </div>
 </div>
+<!--pepe jeans banner -->
+  <div style="position: relative; width: 100%; margin-top: 20px; overflow: hidden;">
+  <img src="https://m.media-amazon.com/images/S/aplus-media/sota/b0c18e90-0a0a-4ded-abbf-7b0d254a6f6b.__CR0,0,970,300_PT0_SX970_V1___.png" 
+       alt="Sale Banner" 
+       style="width: 100%; height: auto; display: block;" 
+       class="animate">
 
+  <!-- Overlay button -->
+  <button style="
+    position: absolute;
+    bottom: 15%;         /* adjust vertical position */
+    right: 43%;          /* adjust horizontal position */
+    transform: translateY(50%);
+    background-color: #1a6ac0d1;  
+    color: white;
+    border: none;
+    padding: 10px 37px;
+    font-size: 18px;
+    border-radius: 19px;
+    cursor: pointer;
+    font-weight: bold;
+    border: 1px solid white;
+  ">
+    Let's Explore <i class="bi bi-arrow-bar-right"></i>
+  </button>
+</div>
    
-<!-- Sale Banner  -->
+<!-- Tommy hilfiger Sale Banner  -->
 <div style="position: relative; width: 100%; margin-top: 20px; overflow: hidden;">
   <img src="https://www.tcmall.uz/_next/image?url=https%3A%2F%2Ftcmall.uz%2Fstrapi%2Fuploads%2FTH_UZB_web_1920h640_Arina_Starczeva_f52c095f75.jpg&w=3840&q=75" 
        alt="Sale Banner" 

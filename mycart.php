@@ -310,7 +310,7 @@ $total = 0;
       border: none;
       border-radius: 5px;
       cursor: pointer;
-    ">Proceed to Payment <i class="bi bi-currency-rupee"></i></button>
+    ">Proceed to Payment </button>
   </form>
 </div>
   <?php else: ?>
